@@ -12,19 +12,19 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
     - python {{ python_min }}
-    - django >=3.2,<=4.2
     - setuptools >=40.8.0
+    - django >=3.2,<5
     - wheel
     - pip
   run:
     - python >={{ python_min }}
     - django-appconf
-    - django >=3.2,<=4.2
+    - django >=3.2,<5
     - cryptography >=2.0
 
 test:
